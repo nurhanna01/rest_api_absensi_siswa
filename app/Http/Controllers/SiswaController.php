@@ -69,7 +69,7 @@ class SiswaController extends Controller
      */
     public function show($id)
     {
-        $siswa=Siswa::findOrFail($id)->where('id','=',$id)->get();
+        $siswa=Siswa::findOrFail($id)->where('id','=',$id)->with('kelas')->get();
         if($siswa){
             return response()->json([
                 'success'=>'detail mahasiwa',

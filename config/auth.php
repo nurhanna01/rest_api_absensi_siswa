@@ -1,6 +1,5 @@
 <?php
 
-// dd('awd');
 return [
 
     /*
@@ -65,6 +64,7 @@ return [
     | Supported: "database", "eloquent"
     |
     */
+
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
