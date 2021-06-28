@@ -26,18 +26,18 @@ Route::post('/siswa/register', [SiswaController::class,'store']);
 Route::post('/login', [AuthController::class,'login']);
 
 Route::middleware('auth:api')->group(function () {
-    Route::get('/siswa/all', [SiswaController::class,'index']);
-    Route::get('/siswa/{id}/detail', [SiswaController::class,'show']);
-    Route::put('/siswa/{id}/update', [SiswaController::class,'update']);
-    Route::delete('/siswa/{id}/delete', [SiswaController::class,'destroy']);
+    Route::get('/siswa', [SiswaController::class,'index']);
+    Route::get('/siswa/{id}', [SiswaController::class,'show']);
+    Route::put('/siswa/{id}', [SiswaController::class,'update']);
+    Route::delete('/siswa/{id}', [SiswaController::class,'destroy']);
 
-    Route::post('/absen/store',[AbsenController::class,'store']);
-    Route::get('/absen/today',[AbsenController::class,'index']);
+    Route::post('/absen',[AbsenController::class,'store']);
+    Route::get('/absen',[AbsenController::class,'index']);
 
-    Route::post('/kelas/store',[KelasController::class,'store']);
-    Route::get('/kelas/all', [KelasController::class,'index']);
-    Route::get('/kelas/{id}/detail',[KelasController::class,'show']);
-    Route::post('/kelas/{id}/update',[KelasController::class,'update']);
+    Route::post('/kelas',[KelasController::class,'store']);
+    Route::get('/kelas', [KelasController::class,'index']);
+    Route::get('/kelas/{id}',[KelasController::class,'show']);
+    Route::put('/kelas/{id}',[KelasController::class,'update']);
     Route::post('/kelas/join',[SiswaController::class,'joinkelas']);
     Route::post('/logout',[AuthController::class,'logout']);
 });
